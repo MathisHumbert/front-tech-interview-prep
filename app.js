@@ -49,3 +49,15 @@ const getLargestNumberIndex = (arr) => {
   );
 };
 console.log(getLargestNumberIndex([7, 1, 4, 12, 9]));
+
+const delay = (n) => {
+  return new Promise((resolve, reject) => setTimeout(() => resolve(), n));
+};
+
+(async () => {
+  console.log('Testing delay');
+  await delay(1000);
+  console.log('Testing delay end');
+})();
+
+// write a function that returns a promise
