@@ -71,7 +71,7 @@ let myArray = ['a', 'b', 'c', 'd'];
 myArray = ['start', ...myArray];
 myArray = [...myArray, 'end'];
 // myArray = ['start', ...myArray, 'end'];
-console.log(myArray);
+// console.log(myArray);
 
 // Create a private variable
 function secretVariable() {
@@ -81,7 +81,7 @@ function secretVariable() {
   };
 }
 let getPrivateVariable = secretVariable();
-console.log(getPrivateVariable());
+// console.log(getPrivateVariable());
 
 // What is the output ?
 var num = 4;
@@ -98,7 +98,7 @@ outer();
 // 3
 
 // What is the output ?
-console.log(typeof typeof 1);
+// console.log(typeof typeof 1);
 // ==> typeof('number')
 // string
 
@@ -111,5 +111,39 @@ let hero = {
 };
 let stoleSecretIdentity = hero.getSecretIdentity;
 // let stoleSecretIdentity = hero.getSecretIdentity.bind(hero); will work
-console.log(stoleSecretIdentity());
-console.log(hero.getSecretIdentity());
+// console.log(stoleSecretIdentity());
+// console.log(hero.getSecretIdentity());
+
+// Palindrome
+const palindrome = (str) => {
+  str = str.toLowerCase();
+  console.log(str === str.split('').reverse().join(''));
+};
+// palindrome('kayak');
+
+// Difference
+function foo1() {
+  return {
+    bar: 'hello',
+  };
+}
+function foo2() {
+  return;
+  {
+    bar: 'hello';
+  }
+}
+// console.log(foo1());
+// console.log(foo2());
+
+// Fibonaci sequence
+const fibonaci = (num) => {
+  const result = [0, 1];
+  for (let i = 2; i <= num; i++) {
+    const prevNum1 = result[i - 1];
+    const prevNum2 = result[i - 2];
+    result.push(prevNum1 + prevNum2);
+  }
+  console.log(result);
+};
+// fibonaci(15);
