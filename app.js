@@ -94,7 +94,7 @@ function outer() {
   }
   inner();
 }
-outer();
+// outer();
 // 3
 
 // What is the output ?
@@ -147,3 +147,30 @@ const fibonaci = (num) => {
   console.log(result);
 };
 // fibonaci(15);
+
+// Fibonaci sequence recursion
+const fibonnaciRecursion = (num) => {
+  if (num < 2) return num;
+
+  return fibonnaciRecursion(num - 1) + fibonnaciRecursion(num - 2);
+};
+// console.log(fibonnaciRecursion(15));
+
+const fizzBuzz = (num) => {
+  for (let i = 1; i <= num; i++) {
+    // check if the number is a multiple of 3 and 5
+    if (i % 3 === 0 && i % 5 === 0) {
+      console.log('fizzbuzz');
+    }
+    // check if the number is a multiple of 3
+    else if (i % 3 === 0) {
+      console.log('fizz');
+    } // check if the number is a multiple of 5
+    else if (i % 5 === 0) {
+      console.log('buzz');
+    } else {
+      console.log(i);
+    }
+  }
+};
+fizzBuzz(5);
