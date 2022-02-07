@@ -20,6 +20,32 @@ console.log(
 );
 
 // function that return an array of the object "name" key
-const getNames = () => {};
+const getNames = (arr) => {
+  return arr.reduce((acc, curr) => {
+    if (Object.keys(curr)[0] === 'name') {
+      acc.push(Object.values(curr)[0]);
+    }
+    return acc;
+  }, []);
+};
+console.log(
+  getNames([
+    { a: 1 },
+    { name: 'Jane' },
+    {},
+    { name: 'Mark' },
+    { name: 'Sophia' },
+    { b: 2 },
+  ])
+);
 
-console.log('getNames', getNames);
+// function that takes an array of numbers and returns the index of the largest number
+const getLargestNumberIndex = (arr) => {
+  return arr.indexOf(
+    arr.reduce((acc, curr) => {
+      if (curr > acc) acc = curr;
+      return acc;
+    })
+  );
+};
+console.log(getLargestNumberIndex([7, 1, 4, 12, 9]));
